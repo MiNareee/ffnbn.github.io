@@ -12,11 +12,18 @@
                 <label><input type="checkbox" id="three"> выбор 3</label><br>
                 <label><input type="checkbox" id="four"> выбор 4</label><br>
     	    </p>
-	<p id="result">Отмечено: <span>0</span></p>    
-    </div>
+	<p>
+	  <button id="btn" class="btn btn-sm btn-outline-primary">Получить отмеченные</button>
+	</p>
+    <p id="result" class="text-success"></p>
+  </div>
+<link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
 <script>
-$('#controls input:checkbox').click(function(){
-	$('#result span').html($('#controls input:checkbox:checked').length);
+$('#btn').click(function(){
+	$('#result').html('');
+	$('input:checkbox:checked').each(function(){
+		$('#result').append($(this).val() + '<br>');
+	});
 });
 </script>
   </body>
