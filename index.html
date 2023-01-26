@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+    <script src='ghjf.js'></script>
   </head>
   <body>
     <div class="text-center">
@@ -15,15 +16,14 @@
 	<p>
 	  <button id="btn" class="btn btn-sm btn-outline-primary">Получить отмеченные</button>
 	</p>
-    <p id="result" class="text-success"></p>
-  </div>
+   <p id="result">Отмечено: <span>0</span></p>    
+</div>
 <link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
+
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 <script>
-$('#btn').click(function(){
-	$('#result').html('');
-	$('input:checkbox:checked').each(function(){
-		$('#result').append($(this).val() + '<br>');
-	});
+$('#controls input:checkbox').click(function(){
+	$('#result span').html($('#controls input:checkbox:checked').length);
 });
 </script>
   </body>
