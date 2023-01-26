@@ -6,13 +6,13 @@
   <body>
     <div class="text-center">
 	    <p id="controls">
-		<label><input type="checkbox" id="one"> Фонтан Каменный цветок</label><br>
-    <label><input type="checkbox" id="two"> Фонтан Каменный цветок</label><br>
-    <label><input type="checkbox" id="three"> Фонтан Каменный цветок</label><br>
-    <label><input type="checkbox" id="four"> Фонтан Каменный цветок</label><br>
-    	</p>
+		<label><input type="checkbox" id="one"> выбор 1</label><br>
+                <label><input type="checkbox" id="two"> выбор 2</label><br>
+                <label><input type="checkbox" id="three"> выбор 3</label><br>
+                <label><input type="checkbox" id="four"> выбор 4</label><br>
+    	    </p>
 	<p id="result">Отмечено: <span>0</span></p>    
-</div>
+    </div>
 <script>
 $('#controls input:checkbox').click(function(){
 	$('#result span').html($('#controls input:checkbox:checked').length);
