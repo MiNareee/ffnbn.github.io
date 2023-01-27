@@ -1,7 +1,8 @@
 function getCheckedCheckBoxes() {
-  var selectedCheckBoxes = document.querySelectorAll('input.checkbox:checked');
-   var checkedValues = Array.from(selectedCheckBoxes).map(cb => cb.value);
-  console.log(checkedValues);
-
- return checkedValues; // для использования в нужном месте
-}
+  s=[]
+  var chbox;
+  chbox=document.getElementById('one');
+  if (chbox.cheked){
+    s.append(chbox.cheked)
+  console.log(s);
+  };
