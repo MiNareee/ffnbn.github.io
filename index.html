@@ -25,20 +25,13 @@
 <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
-
-	$(".group input").on("click", function() {
-
-		if($(".group input:checked").length >= 10) { // Не больше 2-х checkbox
-			
+ $(".group input").on("click", function() {
+	 if($(".group input:checked").length >= 10) { // Не больше 2-х checkbox
 			$(".group input:not(:checked)").attr("disabled", true);
-		
-		} else {
-			
-			$(".group input:disabled").attr("disabled", false);
-		
+	} else {
+		$(".group input:disabled").attr("disabled", false);
 		}
-
-	});
+        });
 	
 </script>
   </body>
