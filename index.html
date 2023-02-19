@@ -17,7 +17,19 @@
 	<label><input type="checkbox" id="nine" value="9"> выбор 9</label><br>
 	<label><input type="checkbox" id="ten" value="10"> выбор 10</label><br>
 	<label><input type="checkbox" id="eleven" value="11"> выбор 11</label> <br>
+	  <script>
+	  $('button').click(function(){
+	  //создаём массив для значений флажко
+	  var checkboxes = [];
+	  $('input:checkbox:checked').each(function(){
+	  //добавляем значение каждого флажка в этот массив
+		  checkboxes.push(this.value);
+	  });
+		  /*объединяем массив в строку с разделителем-запятой. Но лучше подобные вещи хранить в массиве. Для наглядности - вывод в консоль.*/
+		  console.log(checkboxes.join(','));
+	  })
         <button>Клик</button>
+	  
          <link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
          <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 	</body>
