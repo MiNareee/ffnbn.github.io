@@ -6,31 +6,37 @@
     <script src='ghf.js'></script>
   </head>
   <body>
-	<label><input type="checkbox" id="one" value="1"> выбор 1</label> <br>
-        <label><input type="checkbox" id="two" value="2"> выбор 2</label><br>
-        <label><input type="checkbox" id="three" value="3"> выбор 3</label> <br>
-        <label><input type="checkbox" id="four" value="4"> выбор 4</label> <br>
-	<label><input type="checkbox" id="five" value="5"> выбор 5</label> <br>
-        <label><input type="checkbox" id="six"  value="6"> выбор 6</label> <br>
-        <label><input type="checkbox" id="seven" value="7"> выбор 7</label><br>
-        <label><input type="checkbox" id="enity" value="8"> выбор 8</label><br>
-	<label><input type="checkbox" id="nine" value="9"> выбор 9</label><br>
-	<label><input type="checkbox" id="ten" value="10"> выбор 10</label><br>
-	<label><input type="checkbox" id="eleven" value="11"> выбор 11</label> <br>
-	  <script>
-	  $('button').click(function(){
-	  //создаём массив для значений флажко
-	  var checkboxes = [];
-	  $('input:checkbox:checked').each(function(){
-	  //добавляем значение каждого флажка в этот массив
-		  checkboxes.push(this.value);
-	  });
-		  /*объединяем массив в строку с разделителем-запятой. Но лучше подобные вещи хранить в массиве. Для наглядности - вывод в консоль.*/
-		  console.log(checkboxes.join(','));
-	  })
-        <button>Клик</button>
-	  
-         <link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
-         <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+	<div className="text-center">
+            <div className="group">
+                <ul>
+                    <li>Достопримечательности:</li>
+                </ul>
+                <label><input type="checkbox" id="one" value="1"> выбор 1</label> <br>
+                <label><input type="checkbox" id="two" value="2"> выбор 2</label><br>
+                <label><input type="checkbox" id="three" value="3"> выбор 3</label> <br>
+                <label><input type="checkbox" id="four" value="4"> выбор 4</label> <br>
+                <label><input type="checkbox" id="five" value="5"> выбор 5</label> <br>
+                <label><input type="checkbox" id="six" value="6"> выбор 6</label> <br>
+                <label><input type="checkbox" id="seven" value="7"> выбор 7</label><br>
+                <label><input type="checkbox" id="enity" value="8"> выбор 8</label><br>
+                <label><input type="checkbox" id="nine" value="9"> выбор 9</label><br>
+                <label><input type="checkbox" id="ten" value="10"> выбор 10</label><br>
+                <label><input type="checkbox" id="eleven" value="11"> выбор 11</label> <br>
+                <button>Клик</button>
+            </div>
+        </div>
+        <link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
+            <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+
+            <script>
+                $(".group input").on("click", function() {
+                if($(".group input:checked").length >= 10) { // Не больше 2-х checkbox
+                $(".group input:not(:checked)").attr("disabled", true);
+            } else {
+                $(".group input:disabled").attr("disabled", false);
+            }
+            });
+
+	  </script>
 	</body>
 </html>
