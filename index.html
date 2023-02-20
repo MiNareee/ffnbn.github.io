@@ -11,6 +11,7 @@
                 <ul>
                     <li>Достопримечательности:</li>
                 </ul>
+		<div class="group">
                 <label><input type="checkbox" id="one" value="1"> выбор 1</label> <br>
                 <label><input type="checkbox" id="two" value="2"> выбор 2</label><br>
                 <label><input type="checkbox" id="three" value="3"> выбор 3</label> <br>
@@ -23,9 +24,27 @@
                 <label><input type="checkbox" id="ten" value="10"> выбор 10</label><br>
                 <label><input type="checkbox" id="eleven" value="11"> выбор 11</label> <br>
                 <button onclick="alerted();">Клик</button>
+		    </div>
 		   
             </div>
         </div>
+	  <script>
+
+	$(".group input").on("click", function() {
+
+		if($(".group input:checked").length >= 2) { // Не больше 2-х checkbox
+			
+			$(".group input:not(:checked)").attr("disabled", true);
+		
+		} else {
+			
+			$(".group input:disabled").attr("disabled", false);
+		
+		}
+
+	});
+	
+</script>
         <link rel="stylesheet" href="https://snipp.ru/cdn/bootstrap/4.3/bootstrap.min.css">
         <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
 	</body>
